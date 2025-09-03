@@ -3,73 +3,300 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DietDetect - Delete Account</title>
+    <title>Account Deletion Request - DietDetect</title>
     <style>
-        body { font-family: Arial, sans-serif; max-width: 800px; margin: 0 auto; padding: 20px; }
-        .header { background: #4CAF50; color: white; padding: 20px; border-radius: 8px; }
-        .section { margin: 20px 0; padding: 15px; border: 1px solid #ddd; border-radius: 8px; }
-        .contact { background: #f9f9f9; padding: 15px; border-radius: 8px; }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: #f8f9fa;
+            color: #333;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            overflow: hidden;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding: 25px;
+            border-radius: 8px;
+            background: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            color: white;
+        }
+        
+        h1 {
+            margin-bottom: 10px;
+            font-size: 2.2rem;
+        }
+        
+        .header p {
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        .intro {
+            color: #7f8c8d;
+            margin-bottom: 25px;
+            font-size: 16px;
+            text-align: center;
+            padding: 0 10px;
+        }
+        
+        .section {
+            margin-bottom: 30px;
+            padding: 20px;
+            border: 1px solid #eaeaea;
+            border-radius: 8px;
+            background: #fff;
+        }
+        
+        h2 {
+            color: #2c3e50;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #4CAF50;
+        }
+        
+        h3 {
+            color: #2c3e50;
+            margin: 15px 0 10px;
+        }
+        
+        ol, ul {
+            padding-left: 25px;
+            margin-bottom: 20px;
+        }
+        
+        li {
+            margin-bottom: 12px;
+            line-height: 1.5;
+        }
+        
+        strong {
+            color: #2c3e50;
+        }
+        
+        .note {
+            background-color: #f8f9fa;
+            border-left: 4px solid #3498db;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .warning {
+            background-color: #fff8e1;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 4px;
+        }
+        
+        .contact-info {
+            background-color: #e8f4fc;
+            padding: 20px;
+            border-radius: 6px;
+            margin-top: 30px;
+        }
+        
+        .tab-container {
+            display: flex;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+        }
+        
+        .tab {
+            padding: 12px 20px;
+            cursor: pointer;
+            background: #f1f1f1;
+            border-radius: 5px 5px 0 0;
+            margin-right: 5px;
+            border: 1px solid #ddd;
+            border-bottom: none;
+        }
+        
+        .tab.active {
+            background: #fff;
+            font-weight: bold;
+            color: #4CAF50;
+            border-bottom: 2px solid #fff;
+            margin-bottom: -1px;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+            font-size: 14px;
+            padding-top: 20px;
+            border-top: 1px solid #eaeaea;
+        }
+        
+        a {
+            color: #4CAF50;
+            text-decoration: none;
+        }
+        
+        a:hover {
+            text-decoration: underline;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 15px;
+            }
+            
+            .tab {
+                padding: 10px 15px;
+                font-size: 0.9rem;
+            }
+        }
     </style>
 </head>
 <body>
-    <div class="header">
-        <h1>DietDetect - Account Deletion</h1>
-        <p>How to request deletion of your account and associated data</p>
+    <div class="container">
+        <header>
+            <h1>DietDetect - Account Deletion</h1>
+            <p>How to request deletion of your account and associated data</p>
+        </header>
+        
+        <p class="intro">To request deletion of your DietDetect account and associated data, please follow the appropriate procedure outlined below.</p>
+        
+        <div class="tab-container">
+            <div class="tab active" onclick="switchTab('app-tab')">Delete via App</div>
+            <div class="tab" onclick="switchTab('email-tab')">Delete via Email</div>
+        </div>
+        
+        <div id="app-tab" class="tab-content active">
+            <div class="section">
+                <h2>How to Request Account Deletion via App</h2>
+                <ol>
+                    <li><strong>Open the DietDetect app</strong> on your device</li>
+                    <li><strong>Go to Profile section</strong> (bottom navigation)</li>
+                    <li><strong>Tap on "Settings" or "Account"</strong></li>
+                    <li><strong>Select "Delete Account"</strong></li>
+                    <li><strong>Confirm your decision</strong> by entering your password</li>
+                    <li><strong>Tap "Delete Account"</strong> to complete the process</li>
+                </ol>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> Using the in-app deletion process is the fastest and most secure way to delete your account, as it immediately verifies your identity.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div id="email-tab" class="tab-content">
+            <div class="section">
+                <h2>Account Deletion Process via Email</h2>
+                <ol>
+                    <li><strong>Compose an email</strong> from the email address associated with your DietDetect account</li>
+                    <li><strong>Use the subject line</strong>: "DietDetect Account Deletion Request"</li>
+                    <li><strong>Send the email to</strong>: <a href="mailto:privacy@dietdetect.example">privacy@dietdetect.example</a></li>
+                </ol>
+                
+                <div class="note">
+                    <p><strong>Note:</strong> For verification purposes, we can only process deletion requests sent from the email address associated with your DietDetect account. Requests from other email addresses cannot be processed.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="section">
+            <h2>What Data Will Be Deleted</h2>
+            <ul>
+                <li>Your user account and profile information</li>
+                <li>All meal and nutrition data</li>
+                <li>Health goals and preferences</li>
+                <li>Onboarding information</li>
+                <li>App usage history</li>
+                <li>All stored images and food photos</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>Data Retention Policy</h2>
+            <p>When you delete your account:</p>
+            <ul>
+                <li><strong>Immediate deletion:</strong> All personal data is removed from our active servers</li>
+                <li><strong>Backup deletion:</strong> Any backup data is permanently deleted within 30 days</li>
+                <li><strong>Analytics data:</strong> Anonymous usage statistics may be retained for app improvement</li>
+                <li><strong>Legal compliance:</strong> Some data may be retained if required by law</li>
+            </ul>
+        </div>
+        
+        <div class="section">
+            <h2>What to Expect After Submission</h2>
+            <ol>
+                <li>You will receive an automated confirmation email within 15 minutes of submitting your request</li>
+                <li>Our team will process your request within 5-7 business days</li>
+                <li>Once processed, you will receive a confirmation that your account and all associated data have been permanently deleted from our systems</li>
+            </ol>
+        </div>
+        
+        <div class="warning">
+            <h3>Important Notes</h3>
+            <ul>
+                <li>Account deletion is <strong>permanent and cannot be undone</strong></li>
+                <li>Make sure to export any important data before deletion</li>
+                <li>Deletion will remove access to all DietDetect services</li>
+                <li>You can always create a new account later if needed</li>
+            </ul>
+        </div>
+        
+        <div class="contact-info">
+            <h2>Need Assistance?</h2>
+            <p>If you encounter any issues during this process or have additional questions, please contact our support team:</p>
+            <ul>
+                <li><strong>Email:</strong> <a href="mailto:support@dietdetect.example">support@dietdetect.example</a></li>
+                <li><strong>In-App Support:</strong> Go to Profile → Help & Support</li>
+                <li><strong>Response Time:</strong> We'll respond within 48 hours</li>
+            </ul>
+        </div>
+        
+        <footer>
+            <p>© 2023 DietDetect. All rights reserved. | <a href="#">Privacy Policy</a> | <a href="#">Terms of Service</a></p>
+        </footer>
     </div>
 
-    <div class="section">
-        <h2>How to Request Account Deletion</h2>
-        <ol>
-            <li><strong>Open the DietDetect app</strong> on your device</li>
-            <li><strong>Go to Profile section</strong> (bottom navigation)</li>
-            <li><strong>Tap on "Settings" or "Account"</strong></li>
-            <li><strong>Select "Delete Account"</strong></li>
-            <li><strong>Confirm your decision</strong> by entering your password</li>
-            <li><strong>Tap "Delete Account"</strong> to complete the process</li>
-        </ol>
-    </div>
-
-    <div class="section">
-        <h2>What Data Will Be Deleted</h2>
-        <ul>
-            <li>Your user account and profile information</li>
-            <li>All meal and nutrition data</li>
-            <li>Health goals and preferences</li>
-            <li>Onboarding information</li>
-            <li>App usage history</li>
-            <li>All stored images and food photos</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Data Retention Policy</h2>
-        <p>When you delete your account:</p>
-        <ul>
-            <li><strong>Immediate deletion:</strong> All personal data is removed from our servers</li>
-            <li><strong>Backup deletion:</strong> Any backup data is deleted within 30 days</li>
-            <li><strong>Analytics data:</strong> Anonymous usage statistics may be retained for app improvement</li>
-            <li><strong>Legal compliance:</strong> Some data may be retained if required by law</li>
-        </ul>
-    </div>
-
-    <div class="contact">
-        <h2>Need Help?</h2>
-        <p>If you have trouble deleting your account or have questions:</p>
-        <ul>
-            <li><strong>Email:</strong> support@dietdetect.app</li>
-            <li><strong>In-App Support:</strong> Go to Profile → Help & Support</li>
-            <li><strong>Response Time:</strong> We'll respond within 48 hours</li>
-        </ul>
-    </div>
-
-    <div class="section">
-        <h2>Important Notes</h2>
-        <ul>
-            <li>Account deletion is <strong>permanent and cannot be undone</strong></li>
-            <li>Make sure to export any important data before deletion</li>
-            <li>Deletion will remove access to all DietDetect services</li>
-            <li>You can always create a new account later if needed</li>
-        </ul>
-    </div>
+    <script>
+        function switchTab(tabId) {
+            // Hide all tab contents
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Show selected tab content
+            document.getElementById(tabId).classList.add('active');
+            
+            // Update tab buttons
+            document.querySelectorAll('.tab').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Activate the clicked tab (assuming tab button ID follows pattern)
+            event.currentTarget.classList.add('active');
+        }
+    </script>
 </body>
 </html>
